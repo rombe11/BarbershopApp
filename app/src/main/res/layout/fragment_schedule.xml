@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ScheduleFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date and Time for Haircut"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"/>
+
+    <CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#643B9F"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/textView"
+        android:minDate="@{android.text.format.DateFormat.format('yyyy-MM-dd', System.currentTimeMillis() + (7 * 24 * 60 * 60 * 1000))}"
+        android:maxDate="@null"/>
+
+    <Spinner
+        android:id="@+id/spinner_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:minHeight="40dp"
+        android:layout_below="@id/calendar_view"/>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:backgroundTint="#643B9F"
+        android:textStyle="bold"
+        android:layout_below="@id/spinner_hours"/>
+
+</RelativeLayout>
